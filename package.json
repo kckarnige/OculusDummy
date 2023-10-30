@@ -1,0 +1,18 @@
+{
+  "name": "necroculus",
+  "version": "0.0.1",
+  "description": "A concept for a lighter-weight Oculus client.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "keywords": [
+    "oculus"
+  ],
+  "author": "KayoticCarnige",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "electron": "^27.0.2",
+    "electron-builder": "^24.6.4"
+  }
+}
