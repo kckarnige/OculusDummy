@@ -1,7 +1,7 @@
 {
   "name": "necroculus",
   "version": "0.0.1",
-  "description": "A concept for a lighter-weight Oculus client.",
+  "description": "A possible lighter-weight Oculus client.",
   "main": "./src/index.js",
   "scripts": {
     "test": "electron .",
