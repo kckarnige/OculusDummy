@@ -5,7 +5,7 @@
 </p>
 <h1 align="center">Oculus Dummy</h1>
 
-<h3 align="center">The fact the Oculus Client uses 200mb of memory is stupid.</h3>
+<h3 align="center">The fact the Oculus Client uses 200mb of memory, and in some cases 500mb is stupid.</h3>
 
 <br>
 
