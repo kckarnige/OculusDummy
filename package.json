@@ -1,8 +1,8 @@
 {
-  "name": "necroculus",
+  "name": "oculus-dummy",
   "version": "0.0.1",
-  "description": "A possible lighter-weight Oculus client.",
-  "main": "./src/index.js",
+  "description": "A lighter-weight Oculus client.",
+  "main": "./index.js",
   "scripts": {
     "test": "electron .",
     "build": "electron-builder -w portable --x64 --ia32"
@@ -24,8 +24,8 @@
       "package.json",
       "LICENSE"
     ],
-    "appId": "com.kckarnige.necroculus",
-    "productName": "NecrOculus",
+    "appId": "com.kckarnige.oculusdummy",
+    "productName": "Oculus Dummy",
     "artifactName": "OculusClient.${ext}"
   }
 }
