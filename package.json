@@ -13,13 +13,14 @@
   "author": "KayoticCarnige",
   "license": "MPL-2.0",
   "devDependencies": {
-    "electron": "^27.0.2",
+    "electron": "^20.3.12",
     "electron-builder": "^24.6.4"
   },
   "build": {
     "files": [
       "!*",
-      "src",
+      "build",
+      "index.js",
       "node_modules",
       "package.json",
       "LICENSE"

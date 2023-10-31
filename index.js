@@ -10,13 +10,14 @@ const options = {
   message:
     "You can close this program from your system tray.\nTo avoid issues, please only do this when you're not in VR.",
 };
+app.disableHardwareAcceleration();
 
 app.whenReady().then(() => {
   dialog.showMessageBox(null, options, (response, checkboxChecked) => {
     console.log(response);
     console.log(checkboxChecked);
   });
-  tray = new Tray("build/icon.ico");
+  tray = new Tray(path.join(__dirname, "build/icon.ico"));
   const contextMenu = Menu.buildFromTemplate([
     {
       label: "Quit",
