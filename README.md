@@ -15,7 +15,7 @@
 
 2. Rename `OculusClient.exe` to something else, preferably `OculusClient.exe.bak`.
 
-3. Download Oculus Dummy and move it to the same folder, make sure to rename it to `OculusClient.exe`.
+3. Download the replacement and move it to the same folder.
 
 4. Enjoy the extra bit of performance.
 
