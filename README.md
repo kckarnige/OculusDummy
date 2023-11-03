@@ -19,7 +19,7 @@
     - It uses your GPU for a bit on startup.
         - This is more of a nitpick than anything impactful if I'll be honest, especially if you have an iGPU and have it set to use that anyway.
     - Sometimes it randomly decides to uses your CPU.
-        - This is just stupid, especially if you're playing a CPU intensive game like BaS or Boneworks.
+        - This is just stupid, especially if you're playing a CPU intensive game like BaS or Bonelab.
     - It can use an average of 200mb of memory, even in the damn settings menu.
         - Personally, I've seen it use as low as 158mb, up to 267mb of memory.
 - Oculus Dummy loads faster, doesn't use any notable CPU or GPU power, and uses less than 20mb of memory.
