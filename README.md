@@ -26,21 +26,31 @@
 
 ## Installation
 
-1. Go to `C:\Program Files\Oculus\Support\oculus-client\resources` in your File Explorer.
+1. Open your file explorer and go to `C:\Program Files\Oculus\Support\oculus-client\resources`.
 
-2. Rename the `app.asar` already present to something else, preferably `app.asar.bak` though it doesn't matter.
+2. Rename the `app.asar` already present to something else, I prefer `app.asar.bak` for clarity, though it doesn't matter.
 
-3. Download this and move it to the same folder.
+3. Download [this](https://github.com/kckarnige/OculusDummy/releases/latest/download/app.asar), and move it to the same folder.
 
-4. Enjoy the extra bit of performance!
+4. Enjoy the extra bit of performance! 😊
+
+## Uninstallation
+
+1. Open your file explorer and go to `C:\Program Files\Oculus\Support\oculus-client\resources`.
+
+2. Delete the `app.asar` file.
+
+3. Rename your backed-up file back to `app.asar` (Ex. `app.asar.bak` => `app.asar`)
+
+4. Make sure to give Oculus Dummy a kiss before leave it, it still loves you! 😔💕
 
 ## Building from source (Windows Only)
 
-1. Clone the repo
+1. Clone the repository, I prefer GitHub Desktop to make it easier.
 
-2. Run `pnpm i` or `npm i`
+2. Open the directory in your terminal and run `pnpm i` or `npm i`.
 
-3. Run `pnpm build` or `npm run build` 
+3. Run `pnpm build` or `npm run build` and wait.
 
-4. The result should be in the `dist` folder, no extra stuff in needed if you want to install it
+4. The result should be located in the `dist` folder, the built `app.asar` should be ready to install.
 
