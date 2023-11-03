@@ -1,11 +1,15 @@
 {
   "name": "oculus-dummy",
-  "version": "0.0.1",
-  "description": "A lighter-weight Oculus client.",
-  "main": "./index.js",
+  "version": "1.0.0",
+  "description": "An Oculus Client replacement.",
+  "main": "./compiled.js",
   "scripts": {
-    "test": "electron .",
-    "build": "electron-builder -w portable --x64 --ia32"
+    "compile": "webpack --config webpack.config.js",
+    "test": "electron ./index.js",
+    "test:compiled": "npm run compile && electron ./compiled.js",
+    "build": "npm run compile && npm run build:noCompile",
+    "build:dev": "del /q asarBuild && copyfiles index.js asarBuild/ && copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/build && asar pack asarBuild dist/app.asar",
+    "build:noCompile": "del /q asarBuild && copyfiles compiled.js asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && asar pack asarBuild dist/app.asar"
   },
   "keywords": [
     "oculus"
@@ -13,20 +17,12 @@
   "author": "KayoticCarnige",
   "license": "MPL-2.0",
   "devDependencies": {
-    "electron": "^20.3.12",
-    "electron-builder": "^24.6.4"
+    "copyfiles": "^2.4.1",
+    "electron": "^3.1.13",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
-  "build": {
-    "files": [
-      "!*",
-      "build",
-      "index.js",
-      "node_modules",
-      "package.json",
-      "LICENSE"
-    ],
-    "appId": "com.kckarnige.oculusdummy",
-    "productName": "Oculus Dummy",
-    "artifactName": "OculusClient.${ext}"
+  "dependencies": {
+    "babel-loader": "^9.1.3"
   }
 }
