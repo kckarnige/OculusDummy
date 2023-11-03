@@ -1,12 +1,8 @@
 
 <h3 align="center"></h3>
 <p align="center">
-    <img alt="iCon" src="./icon.png" width="256px">
+    <img alt="iCon" src="./oculusdummy-banner-readme.png" >
 </p>
-<h1 align="center">Oculus Dummy</h1>
-
-<h3 align="center">The Oculus Client uses more resources than it should, and that's dumb.</h3>
-
 <br>
 
 ## Reasons to use Oculus Dummy
