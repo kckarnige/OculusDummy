@@ -28,11 +28,11 @@
 
 1. Go to `C:\Program Files\Oculus\Support\oculus-client\resources` in your File Explorer.
 
-2. Rename `app.asar` to something else, preferably `app.asar.bak`.
+2. Rename `app.asar` to something else, preferably `app.asar.bak` though it doesn't matter.
 
-3. Download the replacement and move it to the same folder.
+3. Download this and move it to the same folder.
 
-4. Enjoy the extra bit of performance.
+4. Enjoy the extra bit of performance!
 
 ## Building from source (Windows Only)
 
