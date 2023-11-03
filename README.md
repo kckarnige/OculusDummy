@@ -17,7 +17,7 @@
 
 - The Oculus Client uses system resources that could be use for more important things:
     - It uses your GPU for a bit on startup.
-        - This is more of a nitpick than anything impactful if I'll be honest, especially if you're on a laptop and have it set to use your iGPU.
+        - This is more of a nitpick than anything impactful if I'll be honest, especially if you have an iGPU and have it set to use that anyway.
     - Sometimes it randomly decides to uses your CPU.
         - This is just stupid, especially if you're playing a CPU intensive game like BaS or Boneworks.
     - It can use an average of 200mb of memory, even in the damn settings menu.
