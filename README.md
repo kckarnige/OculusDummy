@@ -14,7 +14,7 @@
 - The Oculus Client uses system resources that could be use for more important things:
     - It uses your GPU for a bit on startup.
         - This is more of a nitpick than anything impactful if I'll be honest, especially if you have an iGPU and have it set to use that anyway.
-    - Sometimes it randomly decides to uses your CPU.
+    - Sometimes it randomly decides to use your CPU.
         - This is just stupid, especially if you're playing a CPU intensive game like BaS or Bonelab.
     - It can use an average of 200mb of memory, even in the damn settings menu.
         - Personally, I've seen it use as low as 158mb, up to 267mb of memory.
@@ -48,5 +48,5 @@
 
 3. Run `pnpm build` or `npm run build` and wait.
 
-4. The result should be located in the `dist` folder, the built `app.asar` inside should work work just like any other release build.
+4. The result should be located in the `dist` folder, the built `app.asar` inside should work just like any other release build.
 
