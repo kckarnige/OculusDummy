@@ -12,8 +12,9 @@ jobs:
             - uses: actions/checkout@v2
 
               # If you remove this step then you should probably remove the enable_jekyll option in the next one
-            - name: Copy additional files
+            - name: Making latestVersion.json Public
               run: |
+                  mkdir .dist
                   cp latestVersion.json .dist/latestVersion.json
                   
 
