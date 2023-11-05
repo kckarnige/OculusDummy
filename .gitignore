@@ -131,3 +131,4 @@ dist
 output/
 asarBuild/
 compiled.js
+package-lock.json
