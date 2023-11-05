@@ -1,7 +1,7 @@
 <br>
 <h3 align="center"></h3>
 <p align="center">
-    <img alt="iCon" src="./oculusdummy-banner-readme.png" width="500px">
+    <img alt="iCon" src="https://github.com/kckarnige/OculusDummy/blob/main/oculusdummy-banner-readme.png?raw=true" width="500px">
 </p>
 <br>
 
