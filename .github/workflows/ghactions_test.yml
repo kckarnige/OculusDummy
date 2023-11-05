@@ -25,6 +25,9 @@ jobs:
       - name: Install Node dependencies
         run: pnpm i
         
+      - name: Install asar
+        run: pnpm i @electron/asar -g
+
       - name: Build
         run: pnpm build
         
