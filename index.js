@@ -34,7 +34,7 @@ const options0 = {
     buttons: ["OK", "Cancel"],
     title: "Oculus Dummy",
     message:
-      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, doing so usually usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do it when not in VR.",
+      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, doing so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do it when not in VR.",
   },
   updateOptions = {
     type: "question",
