@@ -15,7 +15,10 @@ const
     const win = new BrowserWindow({
       title: "Just a sec..",
       width: 300,
-      height: 200
+      height: 200,
+      frame: false,
+      transparent: true,
+      resizable: false
     })
 
     win.loadFile('index.html');
