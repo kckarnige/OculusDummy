@@ -1,6 +1,8 @@
 name: Draft release # Stole this from ArmCord
 on:
-  workflow_dispatch
+  push:
+    branches:
+    - main
 
 env:
   FORCE_COLOR: true
@@ -68,7 +70,7 @@ jobs:
           tag_name: devbuild
           name: Test Build ${{ steps.vars.outputs.sha_short }}
           draft: true
-          prerelease: true
+          prerelease: false
           body_path: .github/release.md
           files: |
             windows/app.asar
