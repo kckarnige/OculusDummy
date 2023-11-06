@@ -1,6 +1,6 @@
 {
   "name": "oculus-dummy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Oculus Client replacement.",
   "main": "./compiled.js",
   "scripts": {
