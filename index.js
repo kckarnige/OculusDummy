@@ -1,12 +1,26 @@
-const { app, Tray, Menu, dialog, shell } = require("electron");
+const { app, Tray, Menu, dialog, shell, BrowserWindow } = require("electron");
 const path = require("path");
 const https = require("https");
 
-let tray = null,
-  startUpDialogClose = false,
-  body = "",
-  response = "",
-  updateAvailable = false;
+let tray = null;
+let startUpDialogClose = false;
+let body = "";
+let response = "";
+let updateAvailable = false;
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600
+  })
+
+  win.loadFile('index.html');
+  win.on('close', function (evt) {
+    evt.preventDefault();
+    win.hide();
+  });
+  win.close()
+}
 
 const options0 = {
     type: "question",
@@ -29,7 +43,6 @@ const options0 = {
     message: "Looks like there's an update, wanna check it out?",
   };
 
-app.commandLine.appendSwitch('js-flags', '--expose_gc --noconcurrent_sweeping');
 app.disableHardwareAcceleration();
 Menu.setApplicationMenu(null);
 
@@ -53,7 +66,7 @@ app.whenReady().then(() => {
     .on("error", function (e) {
       console.log(e);
     });
-
+  createWindow();
   dialog.showMessageBox(null, options0, (r) => {
     if (r == 0) {
       startUpDialogClose = true;
