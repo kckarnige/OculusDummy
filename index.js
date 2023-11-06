@@ -57,7 +57,7 @@ app.whenReady().then(() => {
 
         res.on("end", function () {
           response = JSON.parse(body);
-          if (response.latestVer !== require("./package.json").version) {
+          if (response.version > require("./package.json").version) {
             updateAvailable = true;
           }
         });

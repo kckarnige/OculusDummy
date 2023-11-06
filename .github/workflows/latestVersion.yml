@@ -15,7 +15,7 @@ jobs:
             - name: Making latestVersion.json Public
               run: |
                   mkdir .dist
-                  cp latestVersion.json .dist/latestVersion.json
+                  cp package.json .dist/latestVersion.json
                   
 
               # Documentation: https://github.com/peaceiris/actions-gh-pages
