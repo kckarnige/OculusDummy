@@ -77,17 +77,16 @@ app.whenReady().then(() => {
         });
       }
     }
-  });
-
-  
+  });  
   
   tray = new Tray(path.join(__dirname, "./icon.ico"));
   tray.setToolTip("Oculus Dummy");
   tray.setIgnoreDoubleClickEvents(true);
   tray.setContextMenu(
     Menu.buildFromTemplate([
-      { label: `Oculus Dummy v${version}`, enabled: false},
+      { label: `Oculus Dummy ${version}`, enabled: false},
       { type: "separator"},
+      { label: "Open Debug Tool", click(){ shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")} },
       { label: "Change Refresh Rate", type: "submenu", submenu: [
         { label: "Coming soon.." }
       ]},
