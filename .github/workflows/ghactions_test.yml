@@ -1,8 +1,6 @@
-name: Dev build # Stole this from ArmCord
+name: Draft release # Stole this from ArmCord
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch
 
 env:
   FORCE_COLOR: true
@@ -69,7 +67,7 @@ jobs:
         with:
           tag_name: devbuild
           name: Test Build ${{ steps.vars.outputs.sha_short }}
-          draft: false
+          draft: true
           prerelease: true
           body_path: .github/release.md
           files: |

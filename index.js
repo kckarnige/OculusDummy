@@ -90,6 +90,7 @@ app.whenReady().then(() => {
       dialog.showMessageBox(null, options1, (r) => {
         if (r == 0) {
           app.quit();
+          process.exit();
         }
       });
     }
