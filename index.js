@@ -13,8 +13,9 @@ let
 const
   createWindow = () => {
     const win = new BrowserWindow({
-      width: 800,
-      height: 600
+      title: "Just a sec..",
+      width: 300,
+      height: 200
     })
 
     win.loadFile('index.html');
@@ -88,7 +89,7 @@ app.whenReady().then(() => {
       { type: "separator"},
       { label: "Open Debug Tool", click(){ shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")} },
       { label: "Change Refresh Rate", type: "submenu", submenu: [
-        { label: "Coming soon.." }
+        { label: "Coming soon..", enabled: false}
       ]},
       { label: 'Exit', click(){
         if (startUpDialogClose == true) {
