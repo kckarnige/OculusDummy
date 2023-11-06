@@ -2,27 +2,29 @@ const { app, Tray, Menu, dialog, shell, BrowserWindow } = require("electron");
 const path = require("path");
 const https = require("https");
 
-let tray = null;
-let startUpDialogClose = false;
-let body = "";
-let response = "";
-let updateAvailable = false;
+let
+  tray = null,
+  startUpDialogClose = false,
+  body = "",
+  response = "",
+  updateAvailable = false,
+  version = require("./package.json").version;
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
+const
+  createWindow = () => {
+    const win = new BrowserWindow({
+      width: 800,
+      height: 600
+    })
 
-  win.loadFile('index.html');
-  win.on('close', function (evt) {
-    evt.preventDefault();
-    win.hide();
-  });
-  win.close()
-}
-
-const options0 = {
+    win.loadFile('index.html');
+    win.on('close', function (evt) {
+      evt.preventDefault();
+      win.hide();
+    });
+    win.close()
+  },
+  options0 = {
     type: "question",
     buttons: ["OK"],
     title: "Oculus Dummy",
@@ -47,53 +49,57 @@ app.disableHardwareAcceleration();
 Menu.setApplicationMenu(null);
 
 app.whenReady().then(() => {
-  https
-    .get(
-      "https://kckarnige.is-a.dev/OculusDummy/latestVersion.json",
-      function (res) {
-        res.on("data", function (chunk) {
-          body += chunk;
-        });
-
-        res.on("end", function () {
-          response = JSON.parse(body);
-          if (response.version > require("./package.json").version) {
-            updateAvailable = true;
-          }
-        });
-      }
-    )
-    .on("error", function (e) {
-      console.log(e);
+  https.get("https://kckarnige.is-a.dev/OculusDummy/latestVersion.json", (res) => {
+    res.on("data", (chunk) => {
+      body += chunk;
     });
-  createWindow();
+    res.on("end", () => {
+      response = JSON.parse(body);
+      if (response.version > version) {
+        updateAvailable = true;
+      }
+    });
+  })
+  .on("error", (e) => {
+    console.log(e);
+  });
+
+  createWindow(); // Fuck you garbage collection
+
   dialog.showMessageBox(null, options0, (r) => {
     if (r == 0) {
       startUpDialogClose = true;
       if (updateAvailable == true) {
         dialog.showMessageBox(null, updateOptions, (r) => {
           if (r == 0) {
-            shell.openExternal(
-              "https://github.com/kckarnige/OculusDummy/releases"
-            );
+            shell.openExternal("https://github.com/kckarnige/OculusDummy/releases");
           }
         });
       }
     }
   });
 
+  
+  
   tray = new Tray(path.join(__dirname, "./icon.ico"));
   tray.setToolTip("Oculus Dummy");
   tray.setIgnoreDoubleClickEvents(true);
-  tray.on("right-click", () => {
-    if (startUpDialogClose == true) {
-      dialog.showMessageBox(null, options1, (r) => {
-        if (r == 0) {
-          app.quit();
-          process.exit();
+  tray.setContextMenu(
+    Menu.buildFromTemplate([
+      { label: `Oculus Dummy v${version}`, enabled: false},
+      { type: "separator"},
+      { label: "Change Refresh Rate", type: "submenu", submenu: [
+        { label: "Coming soon.." }
+      ]},
+      { label: 'Exit', click(){
+        if (startUpDialogClose == true) {
+          dialog.showMessageBox(null, options1, (r) => {
+            if (r == 0) {
+              app.quit();
+              process.exit();
+            }
+          });
         }
-      });
-    }
-  });
-
+      }}
+  ]))
 });

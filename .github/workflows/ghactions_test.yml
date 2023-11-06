@@ -1,8 +1,6 @@
 name: Draft release # Stole this from ArmCord
 on:
-  push:
-    branches:
-    - main
+  workflow_dispatch
 
 env:
   FORCE_COLOR: true
