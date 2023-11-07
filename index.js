@@ -37,14 +37,14 @@ const
     buttons: ["OK"],
     title: "Oculus Dummy",
     message:
-      "You can close this program by right-clicking the icon in your system tray.\nTo avoid issues, please only do this when you're not in VR.",
+      "You can close this program by right-clicking the icon in your system tray.\nTo avoid issues, please only do so when not in VR.",
   },
   options1 = {
     type: "warning",
     buttons: ["OK", "Cancel"],
     title: "Oculus Dummy",
     message:
-      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, doing so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do it when not in VR.",
+      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, attempting to do so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do so when not in VR.",
   };
 
   https.get("https://kckarnige.is-a.dev/OculusDummy/latestVersion.json", (res) => {
