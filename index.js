@@ -2,6 +2,10 @@ const { app, Tray, Menu, dialog, shell, BrowserWindow, Notification } = require(
 const path = require("path");
 const https = require("https");
 
+app.setAppUserModelId("Oculus Dummy");
+app.disableHardwareAcceleration();
+Menu.setApplicationMenu(null);
+
 let
   tray = null,
   startUpDialogClose = false,
@@ -59,10 +63,6 @@ const
     console.log(e);
   });
 
-
-app.disableHardwareAcceleration();
-Menu.setApplicationMenu(null);
-
 app.whenReady().then(() => {
 
   setTimeout(() => { // Better update notif
@@ -74,8 +74,8 @@ app.whenReady().then(() => {
       notif.show()
     }
   }, 1500)
-  createWindow(); // Fuck you garbage collection
 
+  createWindow(); // Fuck you garbage collection
   dialog.showMessageBox(null, options0, (r) => {
     if (r == 0) {
       startUpDialogClose = true;
