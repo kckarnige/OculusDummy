@@ -47,6 +47,12 @@ jobs:
           name: app.asar
           path: windows
 
+      - name: get-npm-version
+          id: package-version
+          uses: martinbeentjes/npm-get-version-action@v1.3.1
+          with:
+            path: packages/<yourpackage>
+
       - name: Get some values needed for the release
         id: vars
         shell: bash
@@ -56,7 +62,7 @@ jobs:
       - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true
-          tag_name: devbuild
+          tag_name: ${{ steps.package-version.outputs.current-version}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
