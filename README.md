@@ -53,3 +53,8 @@
 
 4. The result should be located in the `dist` folder, the built `app.asar` inside should work just like any other release build.
 
+## Credits
+
+*[ArmCord](https://github.com/ArmCord/ArmCord)* - GitHub Actions build file
+
+*[@CodTheFish](https://github.com/CodTheFish)* - Testing earlier versions
