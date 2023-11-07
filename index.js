@@ -67,7 +67,7 @@ app.whenReady().then(() => {
 
   setTimeout(() => { // Better update notif
     if (updateAvailable == true) {
-      let notif = new Notification({ icon: path.join(__dirname, "./icon.ico"), title: "Looks like there's a new version!", body: `Version ${getLatest}` });
+      let notif = new Notification({ icon: path.join(__dirname, "./icon.ico"), title: "Looks like there's an update!", body: `You're using v${version}, but v${getLatest} is available!` });
       notif.on('click', () => {
         shell.openExternal("https://github.com/kckarnige/OculusDummy/releases");
       });
