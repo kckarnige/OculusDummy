@@ -48,8 +48,8 @@ jobs:
           path: windows
 
       - name: get-npm-version
-          id: package-version
-          uses: martinbeentjes/npm-get-version-action@v1.3.1
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
 
       - name: Get some values needed for the release
         id: vars
