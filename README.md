@@ -1,7 +1,10 @@
 <br>
 <h3 align="center"></h3>
 <p align="center">
-    <img alt="iCon" src="https://github.com/kckarnige/OculusDummy/blob/main/oculusdummy-banner-readme.png?raw=true" width="500px">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/kckarnige/OculusDummy/blob/main/oculusdummy-banner-readme-dark.png?raw=true" width="500px">
+        <img alt="iCon" src="https://github.com/kckarnige/OculusDummy/blob/main/oculusdummy-banner-readme.png?raw=true" width="500px">
+    </picture> 
 </p>
 <br>
 
