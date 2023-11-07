@@ -18,7 +18,7 @@
         - This is just stupid, especially if you're playing a CPU intensive game like BaS or Bonelab.
     - It can use an average of 200mb of memory, even in the damn settings menu.
         - Personally, I've seen it use as low as 158mb, up to 267mb of memory.
-- The Oculus Client, *with Oculus Dummy installed*, loads faster, doesn't randomly use your CPU or GPU power, and uses under 40mb of memory when idle.
+- The Oculus Client, *with Oculus Dummy installed*, loads faster, doesn't randomly use your CPU or GPU power, and uses around 40mb of memory when idle.
 
 ## Installation
 

@@ -1,4 +1,4 @@
-const { app, Tray, Menu, dialog, shell, BrowserWindow } = require("electron");
+const { app, Tray, Menu, dialog, shell, BrowserWindow, Notification } = require("electron");
 const path = require("path");
 const https = require("https");
 
@@ -8,6 +8,7 @@ let
   body = "",
   response = "",
   updateAvailable = false,
+  getLatest = "",
   version = require("./package.json").version;
 
 const
@@ -20,7 +21,6 @@ const
       transparent: true,
       resizable: false
     })
-
     win.loadFile('index.html');
     win.on('close', function (evt) {
       evt.preventDefault();
@@ -41,24 +41,15 @@ const
     title: "Oculus Dummy",
     message:
       "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, doing so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do it when not in VR.",
-  },
-  updateOptions = {
-    type: "question",
-    buttons: ["Yes", "No"],
-    title: "Oculus Dummy",
-    message: "Looks like there's an update, wanna check it out?",
   };
 
-app.disableHardwareAcceleration();
-Menu.setApplicationMenu(null);
-
-app.whenReady().then(() => {
   https.get("https://kckarnige.is-a.dev/OculusDummy/latestVersion.json", (res) => {
     res.on("data", (chunk) => {
       body += chunk;
     });
     res.on("end", () => {
       response = JSON.parse(body);
+      getLatest = response.version + "";
       if (response.version > version) {
         updateAvailable = true;
       }
@@ -68,18 +59,26 @@ app.whenReady().then(() => {
     console.log(e);
   });
 
+
+app.disableHardwareAcceleration();
+Menu.setApplicationMenu(null);
+
+app.whenReady().then(() => {
+
+  setTimeout(() => { // Better update notif
+    if (updateAvailable == true) {
+      let notif = new Notification({ icon: path.join(__dirname, "./icon.ico"), title: "Looks like there's a new version!", body: `Version ${getLatest}` });
+      notif.on('click', () => {
+        shell.openExternal("https://github.com/kckarnige/OculusDummy/releases");
+      });
+      notif.show()
+    }
+  }, 1500)
   createWindow(); // Fuck you garbage collection
 
   dialog.showMessageBox(null, options0, (r) => {
     if (r == 0) {
       startUpDialogClose = true;
-      if (updateAvailable == true) {
-        dialog.showMessageBox(null, updateOptions, (r) => {
-          if (r == 0) {
-            shell.openExternal("https://github.com/kckarnige/OculusDummy/releases");
-          }
-        });
-      }
     }
   });  
   
