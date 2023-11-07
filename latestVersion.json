@@ -12,7 +12,8 @@
     "build:noCompile": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles compiled.js asarBuild/ && copyfiles LICENSE asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && asar pack asarBuild dist/app.asar"
   },
   "keywords": [
-    "oculus"
+    "oculus",
+    "replacement"
   ],
   "author": "KayoticCarnige",
   "license": "MPL-2.0",
