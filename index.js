@@ -26,8 +26,8 @@ const
       resizable: false
     })
     win.loadFile('index.html');
-    win.on('close', function (evt) {
-      evt.preventDefault();
+    win.on('close', (e) => {
+      e.preventDefault();
       win.hide();
     });
     win.close()
