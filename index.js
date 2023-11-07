@@ -73,7 +73,7 @@ app.whenReady().then(() => {
       });
       notif.show()
     }
-  }, 1500)
+  }, 2000)
 
   createWindow(); // Fuck you garbage collection
   dialog.showMessageBox(null, options0, (r) => {
