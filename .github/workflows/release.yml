@@ -6,7 +6,7 @@ env:
   FORCE_COLOR: true
 
 jobs:
-  build-windows:
+  build:
     runs-on: windows-latest
     steps:
       - name: Checkout code
@@ -37,7 +37,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    needs: [build-windows]
+    needs: [build]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: app.asar
-          path: windows
+          path: release
 
       - name: get-npm-version
         id: package-version
@@ -70,4 +70,4 @@ jobs:
           prerelease: false
           body_path: .github/release.md
           files: |
-            windows/app.asar
+            release/app.asar
