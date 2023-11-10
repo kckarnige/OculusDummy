@@ -8,7 +8,6 @@ Menu.setApplicationMenu(null);
 
 let
   tray = null,
-  startUpDialogClose = false,
   body = "",
   response = "",
   updateAvailable = false,
@@ -19,6 +18,7 @@ const
   createWindow = () => {
     const win = new BrowserWindow({
       title: "Just a sec..",
+      icon: path.join(__dirname + "./icon.ico"),
       width: 300,
       height: 200,
       frame: false,
@@ -32,14 +32,7 @@ const
     });
     win.close()
   },
-  options0 = {
-    type: "question",
-    buttons: ["OK"],
-    title: "Oculus Dummy",
-    message:
-      "You can close this program by right-clicking the icon in your system tray.\nTo avoid issues, please only do so when not in VR.",
-  },
-  options1 = {
+  exitDialog = {
     type: "warning",
     buttons: ["OK", "Cancel"],
     title: "Oculus Dummy",
@@ -67,7 +60,11 @@ app.whenReady().then(() => {
 
   setTimeout(() => { // Better update notif
     if (updateAvailable == true) {
-      let notif = new Notification({ icon: path.join(__dirname, "./icon.ico"), title: "Looks like there's an update!", body: `You're using v${version}, but v${getLatest} is available!` });
+      let notif = new Notification({
+        icon: path.join(__dirname, "./alert.ico"),
+        title: "Looks like there's an update!",
+        body: `You're using v${version}, but v${getLatest} is available!`
+      });
       notif.on('click', () => {
         shell.openExternal("https://github.com/kckarnige/OculusDummy/releases");
       });
@@ -76,11 +73,14 @@ app.whenReady().then(() => {
   }, 2000)
 
   createWindow(); // Fuck you garbage collection
-  dialog.showMessageBox(null, options0, (r) => {
-    if (r == 0) {
-      startUpDialogClose = true;
-    }
-  });  
+
+  let startupNotif = new Notification(
+    {
+      icon: path.join(__dirname, "./icon.ico"),
+      title: `Oculus Dummy ${version} is running!`,
+      body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit"'
+    });
+    startupNotif.show()
   
   tray = new Tray(path.join(__dirname, "./icon.ico"));
   tray.setToolTip("Oculus Dummy");
@@ -94,14 +94,12 @@ app.whenReady().then(() => {
         { label: "Coming soon..hopefully", enabled: false}
       ]},
       { label: 'Exit', click(){
-        if (startUpDialogClose == true) {
-          dialog.showMessageBox(null, options1, (r) => {
-            if (r == 0) {
-              app.quit();
-              process.exit();
-            }
-          });
-        }
+        dialog.showMessageBox(null, exitDialog, (r) => {
+          if (r == 0) {
+            app.quit();
+            process.exit();
+          }
+        });
       }}
   ]))
 });

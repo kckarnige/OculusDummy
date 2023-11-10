@@ -8,8 +8,8 @@
     "test": "electron ./index.js",
     "test:compiled": "npm run compile && electron ./compiled.js",
     "build": "npm run compile && npm run build:noCompile",
-    "build:dev": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles index.js asarBuild/ && copyfiles LICENSE asarBuild/ && copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/build && asar pack asarBuild dist/app.asar",
-    "build:noCompile": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles compiled.js asarBuild/ && copyfiles LICENSE asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && asar pack asarBuild dist/app.asar"
+    "build:dev": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles index.js asarBuild/ && copyfiles LICENSE asarBuild/ && copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/build && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar",
+    "build:noCompile": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles compiled.js asarBuild/ && copyfiles LICENSE asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar"
   },
   "keywords": [
     "oculus",
