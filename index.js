@@ -62,7 +62,7 @@ app.whenReady().then(() => {
     if (updateAvailable == true) {
       let notif = new Notification({
         icon: path.join(__dirname, "./alert.ico"),
-        title: "Looks like there's an update!",
+        title: "Time to get you up-to-date",
         body: `You're using v${version}, but v${getLatest} is available!`
       });
       notif.on('click', () => {
@@ -70,7 +70,7 @@ app.whenReady().then(() => {
       });
       notif.show()
     }
-  }, 2000)
+  }, 1000)
 
   createWindow(); // Fuck you garbage collection
 
@@ -78,18 +78,23 @@ app.whenReady().then(() => {
     {
       icon: path.join(__dirname, "./icon.ico"),
       title: `Oculus Dummy ${version} is running!`,
-      body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit"'
+      body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
     });
     startupNotif.show()
   
   tray = new Tray(path.join(__dirname, "./icon.ico"));
-  tray.setToolTip("Oculus Dummy");
+  tray.setToolTip(`Oculus Dummy ${version}`);
   tray.setIgnoreDoubleClickEvents(true);
   tray.setContextMenu(
     Menu.buildFromTemplate([
       { label: `Oculus Dummy ${version}`, enabled: false},
+      { label: "View on GitHub", click(){
+        shell.openExternal("https://github.com/kckarnige/OculusDummy");
+      }},
       { type: "separator"},
-      { label: "Open Debug Tool", click(){ shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")} },
+      { label: "Open Debug Tool", click(){
+        shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")
+      }},
       { label: "Change Refresh Rate", type: "submenu", submenu: [
         { label: "Coming soon..hopefully", enabled: false}
       ]},
