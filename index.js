@@ -96,7 +96,10 @@ app.whenReady().then(() => {
         shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")
       }},
       { label: "Change Refresh Rate", type: "submenu", submenu: [
-        { label: "Coming soon..hopefully", enabled: false}
+        { label: "Coming eventually..", enabled: false}
+      ]},
+      { label: "Change Resolution", type: "submenu", submenu: [
+        { label: "Coming eventually..", enabled: false}
       ]},
       { label: 'Exit', click(){
         dialog.showMessageBox(null, exitDialog, (r) => {
