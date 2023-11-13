@@ -12,13 +12,20 @@ let
   response = "",
   updateAvailable = false,
   getLatest = "",
-  version = require("./package.json").version;
+  version = require("./package.json").version,
+  getIcon = (name) => {
+    if (name == "alert") {
+      return path.join(__dirname, "./alert.ico")
+    } else if (!name) {
+      return path.join(__dirname, "./icon.ico")
+    }
+  }
 
 const
   createWindow = () => {
     const win = new BrowserWindow({
       title: "Just a sec..",
-      icon: path.join(__dirname + "./icon.ico"),
+      icon: getIcon(),
       width: 300,
       height: 200,
       frame: false,
@@ -37,7 +44,7 @@ const
     buttons: ["OK", "Cancel"],
     title: "Oculus Dummy",
     message:
-      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, attempting to do so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do so when not in VR.",
+      "Are you sure you want to close Oculus Dummy?\nOnly close it when you're not in VR, attempting to do so usually just restarts Oculus Dummy, but to be safe and avoid issues, it's recommended you only do so when not in VR."
   };
 
   https.get("https://kckarnige.is-a.dev/OculusDummy/latestVersion.json", (res) => {
@@ -61,7 +68,7 @@ app.whenReady().then(() => {
   setTimeout(() => { // Better update notif
     if (updateAvailable == true) {
       let notif = new Notification({
-        icon: path.join(__dirname, "./alert.ico"),
+        icon:  getIcon("alert"),
         title: "Time to get you up-to-date",
         body: `You're using v${version}, but v${getLatest} is available!`
       });
@@ -76,13 +83,13 @@ app.whenReady().then(() => {
 
   let startupNotif = new Notification(
     {
-      icon: path.join(__dirname, "./icon.ico"),
+      icon: getIcon(),
       title: `Oculus Dummy ${version} is running!`,
       body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
     });
     startupNotif.show()
   
-  tray = new Tray(path.join(__dirname, "./icon.ico"));
+  tray = new Tray(getIcon());
   tray.setToolTip(`Oculus Dummy ${version}`);
   tray.setIgnoreDoubleClickEvents(true);
   tray.setContextMenu(
@@ -92,15 +99,16 @@ app.whenReady().then(() => {
         shell.openExternal("https://github.com/kckarnige/OculusDummy");
       }},
       { type: "separator"},
-      { label: "Open Debug Tool", click(){
-        shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")
-      }},
-      { label: "Change Refresh Rate", type: "submenu", submenu: [
-        { label: "Coming eventually..", enabled: false}
-      ]},
       { label: "Change Resolution", type: "submenu", submenu: [
         { label: "Coming eventually..", enabled: false}
       ]},
+      { label: "Change Refresh Rate", type: "submenu", submenu: [
+        { label: "Coming eventually..", enabled: false}
+      ]},
+      { label: "Open Debug Tool", click(){
+        shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")
+      }},
+      { type: "separator"},
       { label: 'Exit', click(){
         dialog.showMessageBox(null, exitDialog, (r) => {
           if (r == 0) {
