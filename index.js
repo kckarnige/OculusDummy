@@ -19,9 +19,10 @@ let
     } else if (!name) {
       return path.join(__dirname, "./icon.ico")
     }
-  }
+  };
 
 const
+  lockInstance = !app.requestSingleInstanceLock(),
   createWindow = () => {
     const win = new BrowserWindow({
       title: "Just a sec..",
@@ -64,6 +65,17 @@ const
   });
 
 app.whenReady().then(() => {
+  if (lockInstance) {
+    let alreadyOpenNotif = new Notification(
+      {
+        icon: getIcon(),
+        title: `Oculus Dummy is already running!`,
+        body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
+      });
+      alreadyOpenNotif.show()
+      app.quit()
+      process.exit();
+  }
 
   setTimeout(() => { // Better update notif
     if (updateAvailable == true) {
@@ -99,12 +111,6 @@ app.whenReady().then(() => {
         shell.openExternal("https://github.com/kckarnige/OculusDummy");
       }},
       { type: "separator"},
-      { label: "Change Resolution", type: "submenu", submenu: [
-        { label: "Coming eventually..", enabled: false}
-      ]},
-      { label: "Change Refresh Rate", type: "submenu", submenu: [
-        { label: "Coming eventually..", enabled: false}
-      ]},
       { label: "Open Debug Tool", click(){
         shell.openItem("C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe")
       }},
