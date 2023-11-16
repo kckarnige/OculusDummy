@@ -65,7 +65,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.package-version.outputs.current-version}}-prerelease
-          name: "[Prerelease]" Oculus Dummy - ${{ steps.package-version.outputs.current-version}}
+          name: [Prerelease] Oculus Dummy - ${{ steps.package-version.outputs.current-version}}
           draft: true
           prerelease: true
           body_path: .github/prerelease.md
