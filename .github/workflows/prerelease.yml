@@ -51,7 +51,7 @@ jobs:
         id: json_properties
         uses: zoexx/github-action-json-file-properties@release
         with:
-        file_path: package.json
+        file_path: "package.json"
 
       - name: Create the release
         uses: softprops/action-gh-release@v1
