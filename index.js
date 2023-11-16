@@ -33,7 +33,6 @@ const
       transparent: true,
       resizable: false
     })
-    win.loadFile('index.html');
     win.on('close', (e) => {
       e.preventDefault();
       win.hide();

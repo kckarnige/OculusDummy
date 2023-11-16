@@ -3,6 +3,7 @@ module.exports = {
   mode: "production",
   target: "electron-main",
   entry: "./index.js",
+  cache: true,
   output: {
     filename: "compiled.js",
     path: __dirname,
