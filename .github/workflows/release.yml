@@ -47,19 +47,20 @@ jobs:
           name: app.asar
           path: release
 
-      - name: get properties
-        id: json_properties
-        uses: zoexx/github-action-json-file-properties@release
-        with:
-        file_path: "package.json"
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with: 
+          path: 'package.json'
+          prop_path: 'version'
 
       - name: Create the release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{steps.json_properties.outputs.version}}
-          name: Oculus Dummy - ${{steps.json_properties.outputs.version}}
+          tag_name: ${{steps.version.outputs.prop}} 
+          name: Oculus Dummy - ${{steps.version.outputs.prop}} 
           draft: true
           prerelease: false
           body_path: .github/release.md
