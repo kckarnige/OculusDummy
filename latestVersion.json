@@ -8,8 +8,8 @@
     "test": "electron ./index.js",
     "test:compiled": "npm run compile && electron ./compiled.js",
     "build": "npm run compile && npm run build:noCompile",
-    "build:dev": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles index.js asarBuild/ && copyfiles LICENSE asarBuild/ && copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar",
-    "build:noCompile": "del /q asarBuild && copyfiles index.html asarBuild/ && copyfiles compiled.js asarBuild/ && copyfiles LICENSE asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar",
+    "build:dev": "del /q asarBuild && copyfiles index.js asarBuild/ && copyfiles LICENSE asarBuild/ && copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar",
+    "build:noCompile": "del /q asarBuild && copyfiles compiled.js asarBuild/ && copyfiles LICENSE asarBuild/ copyfiles package.json asarBuild/ && copyfiles icon.ico asarBuild/ && copyfiles alert.ico asarBuild/ && asar pack asarBuild dist/app.asar",
     "build:test": "npm run build:dev && electron ./dist/app.asar"
   },
   "keywords": [
@@ -25,7 +25,8 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "babel-loader": "^9.1.3"
+    "babel-loader": "^9.1.3",
+    "cache-loader": "^4.1.0"
   },
   "packageManager": "pnpm@8.10.1"
 }
