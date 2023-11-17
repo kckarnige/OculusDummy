@@ -26,7 +26,6 @@ const
   createWindow = () => {
     const win = new BrowserWindow({
       title: "Just a sec..",
-      icon: getIcon(),
       width: 300,
       height: 200,
       frame: false,
