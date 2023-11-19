@@ -1,7 +1,7 @@
 <h1 align="center">!!! Important Warning !!!</h1>
 <br>
 
-<p align="center">This build is mainly for public testing it may be unstable, <i><b>here be dragons!</b></i></p>
+<p align="center">This build is primarily for public testing, <i><b>here be dragons!</b></i></p>
 <h1></h1>
 
 ### Installation
