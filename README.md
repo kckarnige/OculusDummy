@@ -21,7 +21,24 @@
         - This is just stupid, especially if you're playing a CPU intensive game like BaS or Bonelab.
     - It can use an average of 200mb of memory, even in the damn settings menu.
         - Personally, I've seen it use as low as 158mb, up to 267mb of memory.
+
 - The Oculus Client, *with Oculus Dummy installed*, loads faster, doesn't randomly use your CPU or GPU power, and uses around 40mb of memory when idle.
+
+- Oculus Dummy works perfectly fine with Oculus Killer and Revive.
+
+## Reasons *NOT* to use Oculus Dummy (A sorta to-do list)
+
+You need to switch back to the default client every time you need to:
+- Change your refresh rate or render resolution*
+- Switch your OpenXR runtime to Oculus
+- Setup a new Meta/Oculus headset *(Not very likely, but worth noting)*
+- Update your Oculus games
+- Change the version of an Oculus game *(Ex. Switching B&S from U12 to U9)*
+- Toggling Developer Runtime Features
+- Changing "over Oculus Link" settings
+
+> **: being worked on*
+
 
 ## Installation
 
