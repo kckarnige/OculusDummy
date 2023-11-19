@@ -1,6 +1,6 @@
 ### "Why should I use this?"
 
-Here's some [reasons why you should use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-to-use-oculus-dummy) and some [reasons you shouldn't use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-not-to-use-oculus-dummy-a-sorta-to-do-list).
+Here are some [reasons why you should use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-to-use-oculus-dummy) and some [reasons you shouldn't use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-not-to-use-oculus-dummy-a-sorta-to-do-list).
 
 In summary, it just depends on what you're looking for, if you're looking for a less resource hungry replacement for the Oculus client, ***with*** app updates and settings, this isn't what you're looking for, at least not now.
 
