@@ -2,9 +2,9 @@
 
 Here's some [reasons why you should use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-to-use-oculus-dummy) and some [reasons you shouldn't use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-not-to-use-oculus-dummy-a-sorta-to-do-list).
 
-In summary, it just depends on what you're looking for, if you're looking for a less resource hungry **full-on** replacement for the Oculus client, including app updates and settings, this isn't what you're looking for, at least not now.
+In summary, it just depends on what you're looking for, if you're looking for a less resource hungry replacement for the Oculus client, ***with*** app updates and settings, this isn't what you're looking for, at least not now.
 
-But if you really need those extra frames and you don't mind switching between the two, or you don't care because you use Oculus Killer with Revive anyway, here's to less ram usage!
+But if those things aren't important to you, you don't mind switching between the two, or you don't care because you use Oculus Killer with Revive anyway, this might be what you've been looking for!
 
 ### Installation
 
