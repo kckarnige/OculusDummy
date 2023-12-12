@@ -71,8 +71,10 @@ app.whenReady().then(() => {
         body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
       });
       alreadyOpenNotif.show()
+    app.on('second-instance', () => {
       app.quit()
       process.exit();
+    })
   }
 
   setTimeout(() => { // Better update notif
