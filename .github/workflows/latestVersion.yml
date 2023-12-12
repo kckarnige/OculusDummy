@@ -16,7 +16,7 @@ jobs:
               run: |
                   mkdir .dist
                   cp package.json .dist/latestVersion.json
-                  cp .github/index.html .dist/index.html
+                  cp .github/pages.html .dist/404.html
                   
 
               # Documentation: https://github.com/peaceiris/actions-gh-pages
