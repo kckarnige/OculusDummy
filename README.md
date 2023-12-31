@@ -29,8 +29,8 @@
 ## Reasons *NOT* to use Oculus Dummy (A sorta to-do list)
 
 You need to switch back to the default client every time you need to:
-- Change your refresh rate or render resolution*
-- Switch your OpenXR runtime to Oculus
+- Change your refresh rate or render resolution
+- Switch your OpenXR runtime to Oculus*
 - Setup a new Meta/Oculus headset *(Not very likely, but worth noting)*
 - Update your Oculus games
 - Change the version of an Oculus game *(Ex. Switching B&S from U12 to U9)*
