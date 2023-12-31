@@ -50,7 +50,7 @@ const lockInstance = !app.requestSingleInstanceLock(),
         buttons: ["OK", "Cancel"],
         title: "Oculus Dummy",
         message:
-            "Are you sure you want to close Oculus Dummy?\n\nOnly close it when you're not in VR, attempting to do will close SteamVR and might break some things, requiring you to restart the OVRService.\nTo be safe and avoid issues, it's recommended you only do so when not in VR.",
+            "Are you sure you want to close Oculus Dummy?\n\nOnly close it when you're not in VR, attempting to do so will close SteamVR and any active SteamVR or Oculus games. This might lead to losing your progress and you may be required to restart the OVRService if you run into issues with Oculus Link.\nTo be safe and avoid these issues, it's recommended you only do so when not in VR."
     };
 
 https
@@ -75,7 +75,7 @@ app.whenReady().then(() => {
         let alreadyOpenNotif = new Notification({
             icon: getIcon(),
             title: `Oculus Dummy is already running!`,
-            body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".',
+            body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
         });
         alreadyOpenNotif.show();
         setTimeout(() => {
@@ -93,7 +93,7 @@ app.whenReady().then(() => {
             let notif = new Notification({
                 icon: getIcon("alert"),
                 title: "Time to get you up-to-date",
-                body: `You're using v${version}, but v${getLatest} is available!`,
+                body: `You're using v${version}, but v${getLatest} is available!`
             });
             notif.on("click", () => {
                 shell.openExternal(
@@ -109,22 +109,22 @@ app.whenReady().then(() => {
     let startupNotif = new Notification({
         icon: getIcon(),
         title: `Oculus Dummy ${version}`,
-        body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".',
+        body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
     });
     let restartNotif = new Notification({
         icon: getIcon(),
-        title: `Oculus Dummy ${version}`,
-        body: "Attempting to restart OVRService...",
+        title: `Attempting to restart OVRService...`,
+        body: 'Please be patient..'
     });
     let restartSuccessNotif = new Notification({
         icon: getIcon(),
-        title: `Oculus Dummy ${version}`,
-        body: "OVRService will restart shortly...",
+        title: `OVRService will restart shortly...`,
+        body: 'Please be patient..'
     });
     let restartFailedNotif = new Notification({
         icon: getIcon(),
-        title: `Oculus Dummy ${version}`,
-        body: "Failed to restart OVRService.",
+        title: `Unable to restart OVRService`,
+        body: `Make sure to choose "Yes" on the UAC dialog, let PowerShell do it's thing!`
     });
     startupNotif.show();
     setTimeout(() => {
