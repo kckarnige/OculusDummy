@@ -2,9 +2,9 @@
 
 Here are some [reasons why you should use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-to-use-oculus-dummy) and some [reasons you shouldn't use Oculus Dummy](https://github.com/kckarnige/OculusDummy#reasons-not-to-use-oculus-dummy-a-sorta-to-do-list).
 
-In summary, it just depends on what you're looking for, if you're looking for a less resource hungry replacement for the Oculus client, ***with*** app updates and settings, this isn't what you're looking for, at least not now.
+In summary, it just depends on what you're looking for, if you're looking for a less resource hungry replacement for the Oculus client, ***with*** all the features of the official client, ~~stop being picky~~ you're outta luck.
 
-But if those things aren't important to you, you don't mind switching between the two, or you don't care because you use Oculus Killer with Revive anyway, this might be what you've been looking for!
+But if that isn't important to you, you don't mind switching between the two, or you don't care because you don't use Oculus Killer, this might be what you've been looking for!
 
 ### Installation
 
@@ -24,7 +24,7 @@ But if those things aren't important to you, you don't mind switching between th
 
 3. Rename your backup file (`app.asar.bak`) back to "`app.asar`".
 
-4. Make sure to give Oculus Dummy a kiss before you leave it, it still loves you! 😔💕
+4. Make sure to give Oculus Dummy a kiss before you leave it, it'll miss you! 😔💕
 
 ### Changelog
 

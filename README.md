@@ -38,6 +38,9 @@ You need to switch back to the default client every time you need to:
 
 > *\*: can be done via the Oculus Dash (Not available with Oculus Killer)*
 
+## Anymore questions?
+
+Yeah? Well [check out the wiki](https://github.com/kckarnige/OculusDummy/wiki), I might've already answered it.
 
 ## Installation
 
