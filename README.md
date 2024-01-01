@@ -30,14 +30,16 @@
 
 You need to switch back to the default client every time you need to:
 - Change your refresh rate or render resolution
-- Switch your OpenXR runtime to Oculus*
-- Setup a new Meta/Oculus headset *(Not very likely, but worth noting)*
-- Update your Oculus games
-- Change the version of an Oculus game *(Ex. Switching B&S from U12 to U9)*
+- Switch your OpenXR runtime to Oculus\*\*
+- Setup a new Oculus/Meta headset *(Not something you'd likely do, but worth noting)*
+- Install and update your Oculus games\*
+- Change the build of an Oculus game *(Ex. Switching B&S from U12 to U9 or BoneLab from Patch 2 to Patch 3 Beta)*
 - Toggling Developer Runtime Features
-- Changing "over Oculus Link" settings
+    - Changing "over Oculus Link" settings
 
-> **: being worked on*
+> *\*: can be done via the default Oculus Dash*
+
+> *\*\*: being worked on*
 
 
 ## Installation
