@@ -6,6 +6,7 @@ const {
     shell,
     BrowserWindow,
     Notification,
+    nativeImage,
 } = require("electron");
 const { exec } = require("child_process");
 const path = require("path");
@@ -21,7 +22,7 @@ let tray = null,
     updateAvailable = false,
     getLatest = "",
     version = require("./package.json").version,
-    getIcon = (name) => {
+    getIconNotif = (name) => {
         if (name == "alert") {
             return path.join(__dirname, "./alert.ico");
         } else if (!name) {
@@ -70,10 +71,19 @@ https
         console.log(e);
     });
 
+    function getIcon (num) {
+        icon = nativeImage.createFromPath(path.join(__dirname, "icon.ico"))
+        if (num) {
+            return icon.resize({height: num})
+        } else {
+            return icon
+        }
+    }
+
 app.whenReady().then(() => {
     if (lockInstance) {
         let alreadyOpenNotif = new Notification({
-            icon: getIcon(),
+            icon: getIconNotif(),
             title: `Oculus Dummy is already running!`,
             body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
         });
@@ -91,7 +101,7 @@ app.whenReady().then(() => {
         // Better update notif
         if (updateAvailable == true) {
             let notif = new Notification({
-                icon: getIcon("alert"),
+                icon: getIconNotif("alert"),
                 title: "Time to get you up-to-date",
                 body: `You're using v${version}, but v${getLatest} is available!`
             });
@@ -107,22 +117,22 @@ app.whenReady().then(() => {
     createWindow(); // Fuck you garbage collection
 
     let startupNotif = new Notification({
-        icon: getIcon(),
+        icon: getIconNotif(),
         title: `Oculus Dummy ${version}`,
         body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
     });
     let restartNotif = new Notification({
-        icon: getIcon(),
+        icon: getIconNotif(),
         title: `Attempting to restart OVRService...`,
         body: 'Please be patient..'
     });
     let restartSuccessNotif = new Notification({
-        icon: getIcon(),
+        icon: getIconNotif(),
         title: `OVRService will restart shortly...`,
         body: 'Please be patient..'
     });
     let restartFailedNotif = new Notification({
-        icon: getIcon(),
+        icon: getIconNotif(),
         title: `Unable to restart OVRService`,
         body: `Make sure to choose "Yes" on the UAC dialog, let PowerShell do it's thing!`
     });
@@ -136,9 +146,9 @@ app.whenReady().then(() => {
     tray.setIgnoreDoubleClickEvents(true);
     tray.setContextMenu(
         Menu.buildFromTemplate([
-            { label: `Oculus Dummy ${version}`, enabled: false },
             {
-                label: "View on GitHub",
+                label: `Oculus Dummy ${version}`,
+                icon: getIcon(16),
                 click() {
                     shell.openExternal(
                         "https://github.com/kckarnige/OculusDummy"
