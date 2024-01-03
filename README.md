@@ -70,7 +70,7 @@ Yeah? Well [check out the wiki](https://github.com/kckarnige/OculusDummy/wiki), 
 
 3. Run `pnpm build` or `npm run build` and wait.
 
-4. The result should be located in the `dist` folder, the built `app.asar` inside should work just like any other release build.
+4. The result should be located in the `.dist` folder, the built `app.asar` inside should work just like any other release build.
 
 ## Credits
 
