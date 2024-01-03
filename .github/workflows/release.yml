@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app.asar
-          path: dist/app.asar
+          path: .dist/app.asar
 
   release:
     runs-on: ubuntu-latest

@@ -128,7 +128,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-output/
-asarBuild/
+.dist/
+.asarBuild/
 compiled.js
 package-lock.json
