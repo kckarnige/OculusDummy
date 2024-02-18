@@ -36,7 +36,7 @@ You need to switch back to the default client every time you need to:
 - Toggling Developer Runtime Features
     - Changing "over Oculus Link" settings
 
-> *\*: can be done via the Oculus Dash (Not available with Oculus Killer)*
+> *\*: can be done via the Oculus Dash for people who don't use Oculus Killer*
 
 ## Anymore questions?
 
@@ -50,7 +50,7 @@ Yeah? Well [check out the wiki](https://github.com/kckarnige/OculusDummy/wiki), 
 
 3. Download [this](https://github.com/kckarnige/OculusDummy/releases/latest/download/app.asar), and move it to the same folder.
 
-4. Enjoy the extra bit of performance! 😊
+4. Enjoy the extra bit of performance! 
 
 ## Uninstallation
 
@@ -60,7 +60,7 @@ Yeah? Well [check out the wiki](https://github.com/kckarnige/OculusDummy/wiki), 
 
 3. Rename your backup file (`app.asar.bak`) back to "`app.asar`".
 
-4. Make sure to give Oculus Dummy a kiss before you leave it, it still loves you! 😔💕
+4. Make sure to give Oculus Dummy a kiss before you leave it, it still loves you! 
 
 ## Building from source (Windows Only)
 
