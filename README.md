@@ -8,6 +8,12 @@
 </p>
 <br>
 
+#
+
+<a href="https://www.buymeacoffee.com/kckarnige">
+  <img width="222" alt="bmc-button" src="https://github.com/kckarnige/kckarnige/assets/32397453/8da1edcc-2c3b-4628-8d82-4b53025a16ee">
+</a>
+
 ## Reasons to use Oculus Dummy
 
 - When you use Link, the Oculus Client opens whether you like it or not, Oculus Dummy makes it a little less annoying, running as a tray application in the background.
