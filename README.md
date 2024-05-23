@@ -1,4 +1,5 @@
-# CHECK OUT WHAT THE CREATOR OF OCULUS KILLER IS [COOKING UP](https://github.com/BnuuySolutions/ReLinked)!!
+<h2 align="center">CHECK OUT WHAT THE CREATOR OF <a href="https://github.com/irlbunny/OculusKiller">OCULUS KILLER</a> IS <a href="https://github.com/BnuuySolutions/ReLinked">COOKING UP</a>!!</h2>
+<h1 align="center">LOOK FOR UPDATES ON <a href="https://discord.gg/dPsfJhsGwb">THEIR DISCORD</a>!!</h2>
 <br>
 <h3 align="center"></h3>
 <p align="center">
