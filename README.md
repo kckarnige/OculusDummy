@@ -1,4 +1,4 @@
-# IF YOU WOULD LIKE TO CONTINUE DEVELOPMENT [CONTACT ME!!](https://github.com/kckarnige#-my-socials-)
+# CHECK OUT WHAT THE CREATOR OF OCULUS KILLER IS [COOKING UP](https://github.com/BnuuySolutions/ReLinked)!!
 <br>
 <h3 align="center"></h3>
 <p align="center">
