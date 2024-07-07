@@ -11,7 +11,6 @@ For more information, check out <a href="https://discord.gg/dPsfJhsGwb">their Di
 </p>
 <br>
 
-#
 
 <p align="center">
     <a href="https://www.buymeacoffee.com/kckarnige">
