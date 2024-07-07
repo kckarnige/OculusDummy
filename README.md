@@ -1,5 +1,6 @@
-<h2 align="center">CHECK OUT WHAT THE CREATOR OF <a href="https://github.com/irlbunny/OculusKiller">OCULUS KILLER</a> IS <a href="https://github.com/BnuuySolutions/ReLinked">COOKING UP</a>!!</h2>
-<h1 align="center">LOOK FOR UPDATES ON <a href="https://discord.gg/dPsfJhsGwb">THEIR DISCORD</a>!!</h2>
+<h2 align="center">Check out what the creator of <a href="https://github.com/irlbunny/OculusKiller">Oculus Killer</a> is <a href="https://github.com/BnuuySolutions/ReLinked">working on</a>!!
+
+For more information, check out <a href="https://discord.gg/dPsfJhsGwb">their Discord</a>!!</h2>
 <br>
 <h3 align="center"></h3>
 <p align="center">
@@ -12,9 +13,11 @@
 
 #
 
-<a href="https://www.buymeacoffee.com/kckarnige">
-  <img width="222" alt="bmc-button" src="https://github.com/kckarnige/kckarnige/assets/32397453/8da1edcc-2c3b-4628-8d82-4b53025a16ee">
-</a>
+<p align="center">
+    <a href="https://www.buymeacoffee.com/kckarnige">
+        <img width="222" alt="bmc-button" src="https://github.com/kckarnige/kckarnige/assets/32397453/8da1edcc-2c3b-4628-8d82-4b53025a16ee">
+    </a>
+</p>
 
 ## Reasons to use Oculus Dummy
 
