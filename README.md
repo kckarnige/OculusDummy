@@ -2,7 +2,7 @@
 
 For more information, check out <a href="https://discord.gg/dPsfJhsGwb">their Discord</a>!!</h2>
 
-<h2 align="center">Check out my <a href="https//github.com/kckarnige/OculusKillSwitch">big brother</a>!</h2>
+<h2 align="center">Check out my <a href="https://github.com/kckarnige/OculusKillSwitch">big brother</a>!</h2>
 
 <h3 align="center"></h3>
 <p align="center">
