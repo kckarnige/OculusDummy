@@ -42,13 +42,13 @@ For more information, check out <a href="https://discord.gg/dPsfJhsGwb">their Di
 
 You need to switch back to the default client every time you need to:
 - Change your refresh rate or render resolution
-- Setup a new Oculus/Meta headset *(Not something you'd likely do, but worth noting)*
+- Setup a new Oculus/Meta headset *(Not something you'd likely do if your using this, but worth noting)*
 - Install and update your Oculus games\*
-- Change the build of an Oculus game *(Ex. Switching B&S from U12 to U9 or BoneLab from Patch 2 to Patch 3 Beta)*
+- Change the build of an Oculus game *(Ex. Switching B&S from 1.0 to U9 or BoneLab from Patch 4 to Patch 3 Beta)* *
 - Toggling Developer Runtime Features
     - Changing "over Oculus Link" settings
 
-> *\*: can be done via the Oculus Dash for people who don't use Oculus Killer*
+> *\*: can be done via other means such as the Oculus Dash, the Quest mobile app, or the Meta website*
 
 ## Anymore questions?
 
