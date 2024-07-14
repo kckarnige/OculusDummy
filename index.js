@@ -49,18 +49,18 @@ const lockInstance = !app.requestSingleInstanceLock(),
     },
     exitDialog = {
         type: "warning",
-        buttons: ["OK", "Cancel"],
+        buttons: ["Yes", "No"],
         title: "Oculus Dummy",
         message:
             "Are you sure you want to close Oculus Dummy?\n\nOnly close it when you're not in VR, attempting to do so will close SteamVR and any active SteamVR or Oculus games. This might lead to losing your progress and you may be required to restart the OVRService if you run into issues with Oculus Link.\nTo be safe and avoid these issues, it's recommended you only do so when not in VR."
     };
 
 https
-    .get("https://kckarnige.is-a.dev/OculusDummy/latestVersion.json", (res) => {
+    .get("https://kckarnige.github.io/OculusDummy/latestVersion.json", (res) => {
         res.on("data", (chunk) => {
             body += chunk;
         });
-        res.on("end", () => {
+        res.on("end", (body) => {
             response = JSON.parse(body);
             getLatest = response.version + "";
             if (response.version > version) {
@@ -83,21 +83,12 @@ https
 
 app.whenReady().then(() => {
     if (lockInstance) {
-        let alreadyOpenNotif = new Notification({
-            icon: getIconNotif(),
-            title: `Oculus Dummy is already running!`,
-            body: 'You can close it by right-clicking the icon in your system tray then clicking "Exit".'
-        });
-        alreadyOpenNotif.show();
-        setTimeout(() => {
-            alreadyOpenNotif.close();
-        }, 4000);
-        app.on("second-instance", () => {
-            app.quit();
-            process.exit();
-        });
+        app.quit();
+        process.exit();
     }
-
+    shell.openItem(
+        process.env.OculusBase+"Support\\oculus-runtime\\OVRServer_x64.exe"
+    );
     setTimeout(() => {
         // Better update notif
         if (updateAvailable == true) {
@@ -188,7 +179,7 @@ app.whenReady().then(() => {
             label: "Open Debug Tool",
             click() {
                 shell.openItem(
-                    "C:\\Program Files\\Oculus\\Support\\oculus-diagnostics\\OculusDebugTool.exe"
+                    process.env.OculusBase+"Support\\oculus-diagnostics\\OculusDebugTool.exe"
                 );
             },
         },
