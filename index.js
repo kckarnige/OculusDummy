@@ -13,6 +13,7 @@ const fs = require("fs");
 const path = require("path");
 const https = require("https");
 
+
 app.setAppUserModelId("Oculus Dummy");
 app.disableHardwareAcceleration();
 Menu.setApplicationMenu(null);
@@ -72,14 +73,14 @@ https
         console.log(e);
     });
 
-    function getIcon (num) {
-        icon = nativeImage.createFromPath(path.join(__dirname, "icon.ico"))
-        if (num) {
-            return icon.resize({height: num})
-        } else {
-            return icon
-        }
+function getIcon(num) {
+    icon = nativeImage.createFromPath(path.join(__dirname, "icon.ico"))
+    if (num) {
+        return icon.resize({ height: num })
+    } else {
+        return icon
     }
+}
 
 app.whenReady().then(() => {
     if (lockInstance) {
@@ -87,7 +88,7 @@ app.whenReady().then(() => {
         process.exit();
     }
     shell.openItem(
-        process.env.OculusBase+"Support\\oculus-runtime\\OVRServer_x64.exe"
+        process.env.OculusBase + "Support\\oculus-runtime\\OVRServer_x64.exe"
     );
     setTimeout(() => {
         // Better update notif
@@ -136,66 +137,68 @@ app.whenReady().then(() => {
     tray = new Tray(getIcon());
     tray.setToolTip(`Oculus Dummy ${version}`);
     tray.setIgnoreDoubleClickEvents(true);
-    contextMenu = (xtr) => {return(
-    Menu.buildFromTemplate([
-        {
-            label: `Oculus Dummy ${version}`,
-            icon: getIcon(16),
-            click() {
-                shell.openExternal(
-                    "https://github.com/kckarnige/OculusDummy"
-                );
-            },
-        },
-        { type: "separator" },
-        xtr,
-        {
-            label: "Restart OVRService",
-            click() {
-                restartNotif.show();
-                restartService = exec(
-                    `powershell Start-Process powershell -WindowStyle hidden -ArgumentList 'Restart-Service','"OVRService"' -Verb RunAs`,
-                    (err, stdout, stderr) => {
-                        if (err) {
-                            console.log(stderr);
-                            restartNotif.close();
-                            restartFailedNotif.show();
-                            setTimeout(() => {
-                                restartFailedNotif.close();
-                            }, 8000);
-                        } else {
-                            console.log(stdout);
-                            restartNotif.close();
-                            restartSuccessNotif.show();
-                            setTimeout(() => {
-                                restartSuccessNotif.close();
-                            }, 8000);
-                        }
-                    }
-                );
-            },
-        },
-        {
-            label: "Open Debug Tool",
-            click() {
-                shell.openItem(
-                    process.env.OculusBase+"Support\\oculus-diagnostics\\OculusDebugTool.exe"
-                );
-            },
-        },
-        { type: "separator" },
-        {
-            label: "Exit",
-            click() {
-                dialog.showMessageBox(null, exitDialog, (r) => {
-                    if (r == 0) {
-                        app.quit();
-                        process.exit();
-                    }
-                });
-            },
-        },
-    ]))}
+    contextMenu = (xtr) => {
+        return (
+            Menu.buildFromTemplate([
+                {
+                    label: `Oculus Dummy ${version}`,
+                    icon: getIcon(16),
+                    click() {
+                        shell.openExternal(
+                            "https://github.com/kckarnige/OculusDummy"
+                        );
+                    },
+                },
+                { type: "separator" },
+                xtr,
+                {
+                    label: "Restart OVRService",
+                    click() {
+                        restartNotif.show();
+                        restartService = exec(
+                            `powershell Start-Process powershell -WindowStyle hidden -ArgumentList 'Restart-Service','"OVRService"' -Verb RunAs`,
+                            (err, stdout, stderr) => {
+                                if (err) {
+                                    console.log(stderr);
+                                    restartNotif.close();
+                                    restartFailedNotif.show();
+                                    setTimeout(() => {
+                                        restartFailedNotif.close();
+                                    }, 8000);
+                                } else {
+                                    console.log(stdout);
+                                    restartNotif.close();
+                                    restartSuccessNotif.show();
+                                    setTimeout(() => {
+                                        restartSuccessNotif.close();
+                                    }, 8000);
+                                }
+                            }
+                        );
+                    },
+                },
+                {
+                    label: "Open Debug Tool",
+                    click() {
+                        shell.openItem(
+                            process.env.OculusBase + "Support\\oculus-diagnostics\\OculusDebugTool.exe"
+                        );
+                    },
+                },
+                { type: "separator" },
+                {
+                    label: "Exit",
+                    click() {
+                        dialog.showMessageBox(null, exitDialog, (r) => {
+                            if (r == 0) {
+                                app.quit();
+                                process.exit();
+                            }
+                        });
+                    },
+                },
+            ]))
+    }
     tray.setContextMenu(contextMenu({ visible: false, enabled: false }));
     let xrsetruntimePath = path.join(__dirname, "../", "xrsetruntime.exe") + "";
     fs.stat(xrsetruntimePath, (err) => {
@@ -213,7 +216,7 @@ app.whenReady().then(() => {
                             `powershell Start-Process '${xrsetruntimePath}' -ArgumentList '-Oculus' -Verb RunAs`
                         )
                     }
-            }));
+                }));
         }
-      });
+    });
 });
